@@ -1,4 +1,4 @@
-#N canvas 284 40 1673 893 10;
+#N canvas 386 100 1673 893 10;
 #X declare -lib mrpeach;
 #X obj -61 22 import mrpeach;
 #X obj -20 385 udpsend;
@@ -149,16 +149,17 @@
 #X obj 328 545 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 8700 1;
 #X obj 405 540 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5400 1;
+-1 -1 5800 1;
 #X obj 486 545 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 5600 1;
 #X text 325 518 hue;
 #X text 395 518 saturation;
 #X text 483 520 value;
 #X obj 390 700 oscled 1;
-#X text 450 700 outputs formatted msg for led1;
-#X msg 434 798 /led1 0.685039 0.425197 0.440945;
+#X msg 434 798 /led1 0.685039 0.456693 0.440945;
 #X msg 434 768 set \$1 \$2 \$3 \$4;
+#X text 450 700 outputs formatted msg for led defined by creation arg
+;
 #X connect 2 0 39 0;
 #X connect 3 0 40 0;
 #X connect 4 0 38 0;
@@ -251,5 +252,6 @@
 #X connect 116 0 122 0;
 #X connect 117 0 122 1;
 #X connect 118 0 122 2;
-#X connect 122 0 125 0;
-#X connect 125 0 124 0;
+#X connect 122 0 124 0;
+#X connect 122 0 23 0;
+#X connect 124 0 123 0;
