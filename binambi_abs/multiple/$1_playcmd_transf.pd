@@ -1,0 +1,6 @@
+#N canvas 414 127 407 357 10;
+#X obj 73 286 outlet;
+#X obj 37 212 pp 1;
+#X obj 37 181 r 1_gui_player;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

@@ -1,0 +1,14 @@
+#N canvas 74 166 454 304 10;
+#X obj 97 108 \$1_speedlim;
+#X obj 97 82 inlet;
+#X obj 97 146 outlet;
+#X obj 189 82 inlet;
+#X text 86 63 input-list;
+#X text 91 52 unlimited;
+#X text 186 62 speedlimit-time;
+#X text 95 172 limited;
+#X text 90 183 output-list;
+#X text 184 134 1.arg: <float> number of atoms in list;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;

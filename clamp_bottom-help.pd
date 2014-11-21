@@ -1,0 +1,13 @@
+#N canvas 1615 359 794 276 10;
+#X floatatom 69 133 5 0 0 0 - - -;
+#X floatatom 69 57 5 0 0 0 - - -;
+#X obj 69 95 clamp_bottom 0;
+#X msg 150 55 1;
+#X text 186 124 any number less than the clamp value will be set to
+the clamp value;
+#X text 199 52 clamp value can be set by the first arg and changed
+by the 2nd inlet;
+#X text -78 56 number to be clamped ->;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 1;

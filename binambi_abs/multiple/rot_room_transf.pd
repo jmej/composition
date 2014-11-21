@@ -1,0 +1,13 @@
+#N canvas 104 8 500 380 10;
+#X obj 35 28 inlet;
+#X obj 35 73 outlet;
+#X obj 35 50 \$1_rot_room_transf;
+#X text 91 140 1.arg: <float> Dimension (2 or 3);
+#X obj 76 73 outlet;
+#X obj 117 73 outlet;
+#X obj 158 73 outlet;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
+#X connect 2 3 6 0;

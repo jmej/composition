@@ -1,0 +1,4 @@
+#N canvas 470 237 454 304 10;
+#X obj 34 27 gain_cnvrt 1;
+#X obj 44 279 outlet;
+#X connect 0 0 1 0;

@@ -1,0 +1,24 @@
+#N canvas 528 163 450 300 10;
+#X obj 66 133 bp~ 1 34;
+#X obj 133 132 bp~ 1 34;
+#X obj 203 131 bp~ 1 34;
+#X obj 115 227 outlet~;
+#X obj 67 43 inlet~;
+#X obj 118 43 inlet;
+#X obj 161 43 inlet;
+#X obj 202 43 inlet;
+#X text 16 4 audio in \, plus 3 frequency inlets for formant creation
+\, and one global resonance inlet;
+#X obj 258 42 inlet;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 0 1;
+#X connect 6 0 1 1;
+#X connect 7 0 2 1;
+#X connect 9 0 2 2;
+#X connect 9 0 1 2;
+#X connect 9 0 0 2;

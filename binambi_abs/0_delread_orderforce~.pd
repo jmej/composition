@@ -1,0 +1,11 @@
+#N canvas 231 -3 523 489 10;
+#X obj 56 36 inlet~;
+#X obj 153 35 inlet;
+#X text 49 9 orderforce;
+#X text 45 18 signal-inlet;
+#X text 151 16 delaytime [ms];
+#X text 257 16 interpolation-time [ms];
+#X text 272 171 1.arg: <symbol> delayline-name;
+#X obj 100 430 outlet~;
+#X obj 257 35 inlet;
+#X connect 0 0 7 0;

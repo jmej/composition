@@ -1,0 +1,5 @@
+#N canvas 0 0 454 304 10;
+#X obj 87 81 \$1_vu_transf;
+#X text 137 60 1.arg: <float> Number of Sources (N = 1 .. 8);
+#X obj 87 58 inlet;
+#X connect 2 0 0 0;

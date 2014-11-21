@@ -1,0 +1,7 @@
+#N canvas 75 77 410 235 10;
+#X obj 53 21 inlet;
+#X obj 53 94 outlet;
+#X text 105 75 1.arg: <float> ambisonic order (2 \, 3 \, 4 \, 5);
+#X obj 53 52 \$1_presets_ambi_weight;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;

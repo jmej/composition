@@ -1,0 +1,5 @@
+#N canvas 361 225 454 304 10;
+#X obj 32 47 \$1_gain_transf;
+#X obj 32 75 outlet;
+#X text 92 76 1.arg: <float> Number of Sources (N = 1 .. 8);
+#X connect 0 0 1 0;

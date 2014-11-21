@@ -1,0 +1,86 @@
+#N canvas 19 348 878 513 10;
+#X declare -lib earplug~ -lib iemlib -lib iemgui;
+#X obj 52 129 r \$0-to-GUI;
+#X obj 34 309 s \$0-from-GUI;
+#N canvas 0 22 450 300 GUI_init 0;
+#X obj 121 121 f \$0;
+#X obj 117 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 124 144 \; \$1-to-GUI size 120 \; \$1-to-GUI src_font 40 \;
+\$1-to-GUI sphere_col 27 \; \$1-to-GUI src_col 1 15;
+#X obj 146 93 loadbang;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 0;
+#X restore 504 263 pd GUI_init;
+#N canvas 646 230 396 326 speedlim_parameters 0;
+#X obj 64 32 r \$0-from-GUI;
+#X obj 64 84 route 1;
+#X obj 64 116 unpack;
+#X obj 71 196 % 360;
+#X obj 71 176 + 360;
+#X obj 220 228 line 0 1;
+#X msg 219 201 \$1 50;
+#X obj 84 252 line 0 1;
+#X msg 83 225 \$1 50;
+#X obj 67 282 outlet azimuth;
+#X obj 210 259 outlet elevation;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 2 1 4 0;
+#X connect 3 0 8 0;
+#X connect 4 0 3 0;
+#X connect 5 0 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X restore 188 249 pd speedlim_parameters;
+#X obj 42 459 outlet~ left;
+#X obj 202 459 outlet~ right;
+#X text 170 23 BINAURAL FILTER;
+#X text 59 51 This filter utilizes HRTF measurements (compact set)
+of KEMAR Dummy-Head Microphone (http://sound.media.mit.edu/KEMAR.html)
+;
+#X text 195 130 NOTES:;
+#X text 195 187 - the file "earplug_data.txt" must be in the same directory
+as this patch - otherwise the HRTFs can't be loaded !;
+#X text 207 156 - you should use stereo headphones to hear the filter
+effects;
+#X obj 103 395 earplug~ 0 0;
+#X obj 52 354 inlet~;
+#X floatatom 52 287 4 0 360 1 azi - -;
+#X floatatom 142 287 4 -40 90 0 elev - -;
+#X obj 399 234 import earplug~ iemlib iemgui;
+#X obj 52 165 cube_sphere 0 60 40 1108 195567 241290 92 10;
+#X obj 448 21 inlet;
+#X obj 451 54 hsl 128 15 0 360 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11536 1;
+#X text 492 18 degrees azimuth;
+#X obj 612 36 inlet;
+#X obj 615 69 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 442 138 src_dp 1 \$1 \$2;
+#X obj 442 113 pack f f;
+#X text 656 34 elevation 0- 100;
+#X obj 449 77 t b f;
+#X connect 0 0 16 0;
+#X connect 3 0 13 0;
+#X connect 3 1 14 0;
+#X connect 11 0 4 0;
+#X connect 11 1 5 0;
+#X connect 12 0 11 0;
+#X connect 13 0 11 1;
+#X connect 14 0 11 2;
+#X connect 16 0 1 0;
+#X connect 17 0 18 0;
+#X connect 18 0 25 0;
+#X connect 18 0 13 0;
+#X connect 20 0 21 0;
+#X connect 21 0 23 0;
+#X connect 21 0 14 0;
+#X connect 22 0 16 0;
+#X connect 23 0 22 0;
+#X connect 25 0 21 0;
+#X connect 25 1 23 1;
+#X coords 0 -1 1 1 124 153 1 50 150;

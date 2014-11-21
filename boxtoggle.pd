@@ -1,0 +1,16 @@
+#N canvas 215 364 515 613 10;
+#X obj 155 98 notein;
+#X obj 155 121 pack f f;
+#X obj 155 142 route \$1;
+#X obj 102 260 outlet;
+#X obj 155 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 155 165 sel 80;
+#X text -6 24 button abstraction built for wooden box \, first press
+from midi button \$1 sends a 1 \, second press sends a 0;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;

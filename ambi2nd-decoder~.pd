@@ -1,0 +1,103 @@
+#N canvas 114 44 688 874 10;
+#X obj 473 29 import iem_ambi iemmatrix;
+#X obj 35 125 loadbang;
+#X obj 35 171 t b b b;
+#X obj 53 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -258699 -1
+-1;
+#X text 76 146 <- recalculate;
+#X obj 79 245 list prepend real_ls;
+#X obj 79 267 list trim;
+#X text 89 188 loudspeaker setup:;
+#X text 286 164 <real_ls> re_ls_index + phi .. 2-dimensional;
+#X text 286 178 <real_ls> re_ls_index + theta + phi .. 3-dimensional
+;
+#X text 419 266 -45;
+#X text 343 266 45;
+#X text 417 314 -135;
+#X text 339 314 135;
+#X text 329 246 example (2D):;
+#X msg 57 430 begin_pseudo_inverse;
+#X msg 35 459 end_pseudo_inverse;
+#X text 241 496 Ambisonic Dekoder:;
+#X text 377 496 arg1: ambisonic order;
+#X text 377 510 arg2: 2D or 3D;
+#X text 377 524 arg3: nr of (real) loudspeakers;
+#X text 377 538 arg4: nr of phantom loudspeakers;
+#X text 66 22 AMBISONIC 2nd ORDER 3D DECODER;
+#X text 22 56 This is a decoder for second order 3D ambisonic \, with
+9 loudspeaker output.;
+#X obj 102 601 inlet~;
+#X obj 148 601 inlet~;
+#X obj 194 601 inlet~;
+#X text 103 580 Ambisonic Input:;
+#X obj 378 601 inlet~;
+#X obj 424 601 inlet~;
+#X obj 470 601 inlet~;
+#X obj 240 601 inlet~;
+#X obj 286 601 inlet~;
+#X obj 332 601 inlet~;
+#X obj 79 665 mtx_mul~ 9 9 0 ------------------------------------------
+;
+#X obj 60 733 outlet~;
+#X obj 113 733 outlet~;
+#X obj 166 733 outlet~;
+#X obj 219 733 outlet~;
+#X text 189 762 9 Channel Output;
+#X obj 272 733 outlet~;
+#X obj 325 733 outlet~;
+#X obj 378 733 outlet~;
+#X obj 431 733 outlet~;
+#X obj 484 733 outlet~;
+#X obj 79 495 ambi_decode3 2 3 9 5;
+#X obj 90 403 list trim;
+#X obj 90 381 list prepend pht_ls;
+#X text 100 338 phantom loudspeaker:;
+#X msg 79 210 1 0 -45 \, 2 0 45 \, 3 0 -135 \, 4 0 135 \, 5 45 0 \,
+6 45 90 \, 7 45 -90 \, 8 45 180 \, 9 90 0;
+#X msg 90 360 1 -45 0 \, 2 -45 90 \, 3 -45 -90 \, 4 -45 180 \, 5 -90
+0;
+#X text 246 395 about phantom loudspeaker ->;
+#N canvas 844 226 450 234 phantom-HELP 0;
+#X text 16 19 Why phantom loudspeakers ?;
+#X text 16 59 If you have an irregular loudspeaker setup \, create
+some additional phantom loudspeakers \, so that the whole setup (phantom+real
+loudspeakers) is somehow regular spread over the room. Otherwise it
+can be \, that the matrix inversion is not possible and that there
+are some artifacts !;
+#X text 16 147 E.g. you only want to drive one hemisphere \, then you
+have to add some phantom loudspeakers at the opposite hemisphere to
+make the matrix inversion possible.;
+#X restore 449 394 pd phantom-HELP;
+#X connect 1 0 2 0;
+#X connect 2 0 16 0;
+#X connect 2 1 15 0;
+#X connect 2 2 49 0;
+#X connect 2 2 50 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 45 0;
+#X connect 15 0 45 0;
+#X connect 16 0 45 0;
+#X connect 24 0 34 1;
+#X connect 25 0 34 2;
+#X connect 26 0 34 3;
+#X connect 28 0 34 7;
+#X connect 29 0 34 8;
+#X connect 30 0 34 9;
+#X connect 31 0 34 4;
+#X connect 32 0 34 5;
+#X connect 33 0 34 6;
+#X connect 34 0 35 0;
+#X connect 34 1 36 0;
+#X connect 34 2 37 0;
+#X connect 34 3 38 0;
+#X connect 34 4 40 0;
+#X connect 34 5 41 0;
+#X connect 34 6 42 0;
+#X connect 34 7 43 0;
+#X connect 34 8 44 0;
+#X connect 45 0 34 0;
+#X connect 46 0 45 0;
+#X connect 47 0 46 0;
+#X connect 49 0 5 0;
+#X connect 50 0 47 0;

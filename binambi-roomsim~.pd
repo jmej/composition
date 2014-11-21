@@ -1,0 +1,18 @@
+#N canvas 894 467 450 318 10;
+#X obj 21 140 import iemlib zexy iem_ambi iem_bin_ambi iemmatrix iem_spec2
+iem_delay iem_roomsim iem_tab iemgui iem_matrix;
+#X obj 24 234 binambi_abs/bin_ambi_4o_3d_2src_wo_doppler;
+#X obj 24 211 inlet~ src1;
+#X obj 167 211 inlet~ src2;
+#X obj 24 257 outlet~ left;
+#X obj 313 257 outlet~ rigth;
+#X text 23 118 this patch needs quite some externals:;
+#X text 75 21 BINAURAL AMBISONIC WITH ROOM SIMULATION;
+#X obj 27 75 bng 15 250 50 0 empty empty openGUI 20 8 0 10 -260818
+-1 -1;
+#X connect 1 0 4 0;
+#X connect 1 1 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 8 0 1 2;
+#X coords 0 -1 1 1 85 32 1 15 60;

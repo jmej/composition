@@ -1,0 +1,59 @@
+#N canvas 170 267 1916 682 10;
+#X declare -lib mrpeach;
+#X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
+#X declare -lib iem_ambi -lib iemmatrix;
+#X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
+#X declare -lib iem_ambi -lib iemmatrix;
+#X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
+#X declare -lib iem_ambi -lib iemmatrix;
+#X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
+#X declare -lib iem_ambi -lib iemmatrix;
+#X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
+#X declare -lib iem_ambi -lib iemmatrix;
+#X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
+#X declare -lib iem_ambi -lib iemmatrix;
+#X declare -lib earplug~ -lib iemlib -lib iemgui;
+#X declare -lib earplug~ -lib iemlib -lib iemgui;
+#X declare -lib earplug~ -lib iemlib -lib iemgui;
+#X declare -lib earplug~ -lib iemlib -lib iemgui;
+#X declare -lib earplug~ -lib iemlib -lib iemgui;
+#X declare -lib earplug~ -lib iemlib -lib iemgui;
+#X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
+#X declare -lib iem_ambi -lib iemmatrix;
+#X declare -lib earplug~ -lib iemlib -lib iemgui;
+#X obj 215 106 composition-with-inputs;
+#X obj 74 7 loadbang;
+#X msg 74 31 \; pd dsp 1;
+#X text 771 45 select remote_control \, and binaural for testing with
+headphones - you have to initialize every value when starting. So send
+at least a bang or value to everything.;
+#X text 203 465 /vca1 /vca2 /vca3 /vca4 /vca5 /vca6;
+#X text 204 434 commands for sawtooth bank;
+#X text 198 539 /t1 /t2 /t3 /t4 /t5 /t6 - where /t1 is the master \,
+and the rest are offsets.. some positive and some negative.;
+#X text 197 576 /tlpf;
+#X text 196 606 /thpf;
+#X text 712 431 commands for noise source;
+#X text 1132 448 /bvca;
+#X text 710 454 it's a weird erratic noise source.;
+#X text 709 483 /nvca;
+#X text 708 504 /npan;
+#X text 1133 470 /bfreq 0-127 is mapped 30hz - 100hz;
+#X text 1134 424 commands for sine subbass;
+#X text 1480 423 commands for formant filter;
+#X text 1479 452 this filter affects both the sawtooth bank and the
+noise source;
+#X text 1480 496 /formanttime gives you up to 10 second linear fades
+between the vowel presets using three resonant band pass filters;
+#X text 1482 554 /vowel_ee /vowel_ih /vowel_eh /vowel_ae /vowel_eh
+/vowel_oo /vowel_uh /vowel_o /vowel_ah;
+#X text 704 552 commands for lights;
+#X text 704 576 there are 6 RGB LEDs in the ceiling of the space that
+respond to Hue \, Saturation \, and Value from 0-1;
+#X text 700 611 /led1_h /led1_s /led1_v /led2_h /led2_s /led2_v /led3_h
+/led3_s /led3_v /led4_h /led4_s /led4_v /led5_h /led5_s /led5_v /led6_h
+/led6_s /led6_v;
+#X text 200 489 /pan1 /pan2 /pan3 /pan4 /pan5 /pan6 - these are all
+360 degree 4 channel clockwise pans. in binaural mode that should be
+similulated for headphones.;
+#X connect 1 0 2 0;

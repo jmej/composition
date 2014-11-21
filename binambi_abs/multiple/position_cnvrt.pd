@@ -1,0 +1,10 @@
+#N canvas 351 241 454 304 10;
+#X text 93 24 1.arg: <float> Dimension (2 or 3);
+#X obj 55 123 \$2_position_cnvrt \$1;
+#X text 93 42 2.arg: <float> Number of Sources (N = 1..8);
+#X obj 55 96 inlet;
+#X obj 55 151 outlet;
+#X obj 170 153 outlet;
+#X connect 1 0 4 0;
+#X connect 1 1 5 0;
+#X connect 3 0 1 0;
