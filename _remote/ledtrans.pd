@@ -1,0 +1,41 @@
+#N canvas 508 198 1014 623 10;
+#X obj 311 231 oscled 1;
+#X obj 454 328 outlet;
+#X obj 374 231 oscled 2;
+#X obj 432 231 oscled 3;
+#X obj 495 231 oscled 4;
+#X obj 555 230 oscled 5;
+#X obj 618 230 oscled 6;
+#X obj 323 147 route /led1_h /led1_s /led1_v /led2_h /led2_s /led2_v
+/led3_h /led3_s /led3_v /led4_h /led4_s /led4_v /led5_h /led5_s /led5_v
+/led6_h /led6_s /led6_v;
+#X obj 323 105 inlet;
+#X text 368 105 all led messages go here;
+#X text 503 329 output to packOSC and udpsend;
+#X text 648 32 abstraction to translate protocol change from /led1_h
+to /led1 \$1 \$2 \$3;
+#X connect 0 0 1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;
+#X connect 7 1 0 1;
+#X connect 7 2 0 2;
+#X connect 7 3 2 0;
+#X connect 7 4 2 1;
+#X connect 7 5 2 2;
+#X connect 7 6 3 0;
+#X connect 7 7 3 1;
+#X connect 7 8 3 2;
+#X connect 7 9 4 0;
+#X connect 7 10 4 1;
+#X connect 7 11 4 2;
+#X connect 7 12 5 0;
+#X connect 7 13 5 1;
+#X connect 7 14 5 2;
+#X connect 7 15 6 0;
+#X connect 7 16 6 1;
+#X connect 7 17 6 2;
+#X connect 8 0 7 0;
