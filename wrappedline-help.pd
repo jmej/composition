@@ -1,0 +1,23 @@
+#N canvas 1086 335 604 296 10;
+#X floatatom 12 168 5 0 0 0 - - -;
+#X obj 64 169 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11430 1;
+#X text 127 37 inputs should be between 0 and 1;
+#X text 75 13 |target ms(;
+#X text 127 131 creation argument and the second input is the line's
+grain rate \, see the [line] help;
+#X obj 12 104 wrappedline 10;
+#X msg 11 15 0.1 10000;
+#X msg 20 36 0.45 10000;
+#X msg 27 57 0.9 10000;
+#X msg 36 78 0.25 10000;
+#X text 128 55 ramps from the current value to the new value \, first
+cancels a running ramp if there is one. The second argument gives the
+time that the ramp should take to cover the entire range |0 \, 1) so
+\, if you're going from 0 to 0.1 it'll take that amount * 0.1 ms;
+#X connect 5 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;

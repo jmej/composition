@@ -21,7 +21,7 @@
 #X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
 #X declare -lib iem_ambi -lib iemmatrix;
 #X declare -lib earplug~ -lib iemlib -lib iemgui;
-#X obj 215 106 composition-with-inputs;
+#X obj 231 107 composition-with-inputs;
 #X obj 74 7 loadbang;
 #X msg 74 31 \; pd dsp 1;
 #X text 771 45 select remote_control \, and binaural for testing with
