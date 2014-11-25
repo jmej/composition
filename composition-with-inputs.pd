@@ -1,4 +1,4 @@
-#N canvas 163 48 1453 855 10;
+#N canvas 709 298 1453 855 10;
 #X declare -lib mrpeach;
 #X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
 #X declare -lib iem_ambi -lib iemmatrix;
@@ -71,7 +71,7 @@
 #X obj 530 572 phasor~;
 #X obj 621 573 phasor~;
 #X obj 1252 762 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2564 1;
+-1 -1 12694 1;
 #X obj 1250 830 s filterall_l;
 #X obj 1411 742 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -135,7 +135,7 @@
 #X msg 1299 1260 \$1 \$2;
 #X obj 1300 1239 pack;
 #X obj 1386 1191 hsl 128 15 0 500 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 9580 1;
+-262144 -1 -1 323 1;
 #X obj 1299 1285 line;
 #X obj 767 824 s pitch;
 #X floatatom 767 798 5 0 0 0 - - -;
@@ -483,24 +483,24 @@
 #N canvas 0 22 450 300 autopanners 0;
 #X obj -133 1113 s \$0-p1;
 #X obj -130 1091 hsl 128 15 0 360 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 4480 1;
+-262144 -1 -1 5750 1;
 #X obj -131 1136 hsl 128 15 0 360 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 6597 1;
+-262144 -1 -1 7867 1;
 #X obj -134 1157 s \$0-p2;
 #X obj -131 1183 hsl 128 15 0 360 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 8714 1;
+-262144 -1 -1 9984 1;
 #X obj -132 1228 hsl 128 15 0 360 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 10830 1;
+-262144 -1 -1 12100 1;
 #X obj -134 1205 s \$0-p3;
 #X obj -135 1249 s \$0-p4;
 #X obj -131 1270 hsl 128 15 0 360 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 247 1;
+-262144 -1 -1 1517 1;
 #X obj -132 1315 hsl 128 15 0 360 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 2364 1;
+-262144 -1 -1 3634 1;
 #X obj -134 1292 s \$0-p5;
 #X obj -135 1336 s \$0-p6;
 #X obj -137 1031 hsl 128 15 0 360 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 4487 1;
+-262144 -1 -1 5775 1;
 #N canvas 367 195 799 633 guy 0;
 #X obj 134 51 inlet;
 #X obj 123 140 t f f;
@@ -594,7 +594,7 @@
 #X obj 803 1566 jrouter \$0-p4 rp4;
 #X obj 916 1567 jrouter \$0-p5 rp5;
 #X obj 1031 1566 jrouter \$0-p6 rp6;
-#N canvas 190 48 1042 581 binaural_panners--------------- 0;
+#N canvas 1077 810 1042 581 binaural_panners--------------- 0;
 #X obj -107 165 binaural~;
 #X obj 62 165 binaural~;
 #X obj 206 170 binaural~;
@@ -615,6 +615,12 @@
 #X obj 432 48 inlet;
 #X obj 586 50 inlet;
 #X obj 735 52 inlet;
+#X obj 558 106 wrap360;
+#X obj 433 112 wrap360;
+#X obj 286 101 wrap360;
+#X obj 138 101 wrap360;
+#X obj -23 91 wrap360;
+#X obj 740 116 wrap360;
 #X connect 0 0 6 0;
 #X connect 0 1 7 0;
 #X connect 1 0 6 0;
@@ -632,13 +638,19 @@
 #X connect 10 0 3 0;
 #X connect 11 0 4 0;
 #X connect 12 0 5 0;
-#X connect 13 0 0 1;
-#X connect 14 0 1 1;
+#X connect 13 0 24 0;
+#X connect 14 0 23 0;
 #X connect 15 0 1 0;
-#X connect 16 0 2 1;
-#X connect 17 0 3 1;
-#X connect 18 0 4 1;
-#X connect 19 0 5 1;
+#X connect 16 0 22 0;
+#X connect 17 0 21 0;
+#X connect 18 0 20 0;
+#X connect 19 0 25 0;
+#X connect 20 0 4 1;
+#X connect 21 0 3 1;
+#X connect 22 0 2 1;
+#X connect 23 0 1 1;
+#X connect 24 0 0 1;
+#X connect 25 0 5 1;
 #X restore 61 1578 pd binaural_panners---------------;
 #X obj -56 1714 sel 0 1;
 #X msg -21 1742 0;
@@ -718,16 +730,18 @@
 #X connect 3 0 0 1;
 #X restore 941 1653 pd noisepanner;
 #X obj 1022 1597 r remote-01;
-#N canvas 0 22 527 430 noisebinaural 0;
+#N canvas 565 332 527 430 noisebinaural 0;
 #X obj 70 127 binaural~;
 #X obj 67 9 inlet~;
 #X obj 144 8 inlet;
 #X obj 65 314 outlet~;
 #X obj 178 310 outlet~;
+#X obj 132 64 wrap360;
 #X connect 0 0 3 0;
 #X connect 0 1 4 0;
 #X connect 1 0 0 0;
-#X connect 2 0 0 1;
+#X connect 2 0 5 0;
+#X connect 5 0 0 1;
 #X restore 289 1639 pd noisebinaural;
 #X obj 351 1408 spigot~;
 #X obj 390 1384 r quad-01;
@@ -743,7 +757,7 @@
 #N canvas 0 22 1517 807 bass_stuff 0;
 #X obj -198 -72 throw~ bass;
 #X obj -168 -155 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 10964 1;
+-1 -1 809 1;
 #X obj -185 -355 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj -173 -250 line;
@@ -799,10 +813,10 @@
 #X connect 23 0 9 0;
 #X restore 1124 486 pd bass_stuff;
 #X obj 1023 299 s noisevca;
-#N canvas 23 500 457 456 noise_stuff 1;
+#N canvas 23 500 457 456 noise_stuff 0;
 #X obj -218 247 nozip;
 #X obj -134 234 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3186 1;
+-1 -1 485 1;
 #X obj -103 371 throw~ noise;
 #N canvas 0 22 450 300 fire 0;
 #N canvas 8 22 450 300 hissing 0;
@@ -1437,7 +1451,6 @@
 #X connect 357 3 427 0;
 #X connect 357 4 430 0;
 #X connect 357 5 429 0;
-#X connect 357 6 358 0;
 #X connect 358 0 359 0;
 #X connect 360 0 297 0;
 #X connect 360 1 298 0;

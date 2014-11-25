@@ -21,7 +21,7 @@
 #X declare -lib iemgui -lib iem_ambi -lib iemlib -lib iemmatrix;
 #X declare -lib iem_ambi -lib iemmatrix;
 #X declare -lib earplug~ -lib iemlib -lib iemgui;
-#X obj 215 106 composition-with-inputs;
+#X obj 231 107 composition-with-inputs;
 #X obj 74 7 loadbang;
 #X msg 74 31 \; pd dsp 1;
 #X text 771 45 select remote_control \, and binaural for testing with
@@ -56,4 +56,10 @@ respond to Hue \, Saturation \, and Value from 0-1;
 #X text 200 489 /pan1 /pan2 /pan3 /pan4 /pan5 /pan6 - these are all
 360 degree 4 channel clockwise pans. in binaural mode that should be
 similulated for headphones.;
+#X obj 50 136 s comport_enable;
+#X msg 50 105 0;
+#X msg 81 105 1;
+#X text 49 81 press zero to disable comport spam;
 #X connect 1 0 2 0;
+#X connect 25 0 24 0;
+#X connect 26 0 24 0;
